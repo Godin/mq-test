@@ -45,7 +45,7 @@ const repo = "mq-test";
     })
     console.log("mergeable: " + pr.mergeable)
     console.log("mergeable_state: " + pr.mergeable_state)
-    switch (pr.mergeable_state) {
+    switch (pr.mergeable_state) { // https://developer.github.com/v4/enum/mergestatestatus/
     case "behind":
         await octokit.repos.merge({
             owner: owner,
