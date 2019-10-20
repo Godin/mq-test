@@ -1,0 +1,13 @@
+on: repository_dispatch
+
+jobs:
+  mq_job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - run: cd ./.github/actions/mq && npm install
+    - uses: ./.github/actions/mq
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
