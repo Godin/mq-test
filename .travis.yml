@@ -1,3 +1,3 @@
 language: java
 install: true
-script: sleep 60s
+script: sleep 50s
